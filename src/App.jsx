@@ -24,6 +24,10 @@ const router = createBrowserRouter([
     path: "/",
     element: <StandardPage page={<Home />} />,
   },
+  {
+    path: "/ingredients",
+    element: <StandardPage page={<ingredients />} />,
+  },
 ]);
 
 /**
