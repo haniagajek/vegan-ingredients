@@ -1,12 +1,40 @@
 import React from "react";
 
-@return {JSX.Element}
-
-export function ingredients() {
-    return (
-
-        <div>
-            <h1>Eloelo</h1>
-        </div>
-    )
+/**
+ * Renders the Home component.
+ * @remarks
+ * WIP: Currently function as a placeholder for the homepage.
+ * @return {JSX.Element} The rendered Home component.
+ */
+export function Ingredients() {
+  return (
+    <div className="max-w-3xl mx-auto px-4">
+      <table className=" border-separate border-spacing-x-20 border-spacing-y-8   border">
+        <thead>
+          <tr>
+            <th className="bg-zinc-100 px-14 ">Meal</th>
+            <th className="bg-zinc-100 px-14">Calories</th>
+            <th className="bg-zinc-100 px-14">Level</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Sesame Noodles</td>
+            <td>1000kcal</td>
+            <td>Easy</td>
+          </tr>
+          <tr>
+            <td>Pumpkin Risotto</td>
+            <td>1000kcal</td>
+            <td>Medium</td>
+          </tr>
+          <tr>
+            <td>Green Tahini Dip</td>
+            <td>1000kcal</td>
+            <td>Easy</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  );
 }

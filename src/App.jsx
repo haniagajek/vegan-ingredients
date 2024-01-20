@@ -2,6 +2,8 @@ import "./styles/App.css";
 import React from "react";
 import { StandardLayout } from "./layout/StandardLayout";
 import { Home } from "./pages/Home";
+import { Ingredients } from "./pages/Ingredients";
+import { ErrorPage } from "./pages/ErrorPage";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Navbar } from "./components/Navbar";
 import PropTypes from "prop-types";
@@ -25,8 +27,12 @@ const router = createBrowserRouter([
     element: <StandardPage page={<Home />} />,
   },
   {
-    path: "/ingredients",
-    element: <StandardPage page={<ingredients />} />,
+    path: "/Ingredients",
+    element: <StandardPage page={<Ingredients />} />,
+  },
+  {
+    path: "/*",
+    element: <StandardPage page={<ErrorPage />} />,
   },
 ]);
 
