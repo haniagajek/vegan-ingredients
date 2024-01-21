@@ -8,8 +8,8 @@ import React from "react";
  */
 export function Ingredients() {
   return (
-    <div className="max-w-3xl mx-auto px-4">
-      <table className=" border-separate border-spacing-x-20 border-spacing-y-8   border">
+    <div className="max-w-max mx-auto ">
+      <table className=" border-separate border-spacing-x-20 border-spacing-y-8 border mt-24 text-center">
         <thead>
           <tr>
             <th className="bg-zinc-100 px-14 ">Meal</th>
