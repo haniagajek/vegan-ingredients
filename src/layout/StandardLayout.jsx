@@ -10,7 +10,7 @@ import React from "react";
  */
 export function StandardLayout({ children, navbar }) {
   return (
-    <div className="min-h-screen w-screen">
+    <div className="min-h-screen w-screen dark">
       {navbar}
       <div className="max-w-2xl mx-auto px-4">{children}</div>;
     </div>

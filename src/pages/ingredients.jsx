@@ -12,9 +12,9 @@ export function Ingredients() {
       <table className=" border-separate border-spacing-x-20 border-spacing-y-8 border mt-24 text-center">
         <thead>
           <tr>
-            <th className="bg-zinc-100 px-14 ">Meal</th>
-            <th className="bg-zinc-100 px-14">Calories</th>
-            <th className="bg-zinc-100 px-14">Level</th>
+            <th className="bg-blo px-14 hover:bg-blt">Meal</th>
+            <th className="bg-blo px-14 hover:bg-blt">Calories</th>
+            <th className="bg-blo px-14 hover:bg-blt">Level</th>
           </tr>
         </thead>
         <tbody>

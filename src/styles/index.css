@@ -17,6 +17,23 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.light {
+  --tod: 55, 65, 81;
+  --ttd: 75, 85, 99;
+  --blo: 244, 244, 245;
+  --blt: 228, 228, 231;
+
+  background: rgba(255, 255, 255, 1);
+}
+
+.dark {
+  --tod: 235, 235, 230;
+  --ttd: 185, 185, 190;
+  --blo: 0, 0, 223;
+  --blt: 53, 56, 57;
+  background: rgba(30, 30, 30, 1);
+}
+
 a {
   font-weight: 500;
   color: #646cff;
