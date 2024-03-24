@@ -15,7 +15,7 @@ export function Navbar() {
         <button
           data-collapse-toggle="navbar-default"
           type="button"
-          className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-ttd rounded-lg md:hidden hover:bg-blo focus:outline-none focus:ring-2 focus:ring-gray-200"
+          className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-ttd rounded-lg md:hidden hover:bg-blo focus:outline-none focus:ring-2 focus:ring-tod"
           aria-controls="navbar-default"
           aria-expanded="false"
         >
@@ -37,7 +37,7 @@ export function Navbar() {
           </svg>
         </button>
         <div className="hidden w-full md:block md:w-auto" id="navbar-default">
-          <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 border border-blo rounded-lg bg-blt md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+          <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 border border-blo rounded-lg bg-blt md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-blt ">
             <NavbarItem text="Home" href="/" current />
             <NavbarItem text="Ingredients" href="/ingredients" />
           </ul>

@@ -9,7 +9,7 @@ import React from "react";
 export function Ingredients() {
   return (
     <div className="max-w-max mx-auto ">
-      <table className=" border-separate border-spacing-x-20 border-spacing-y-8 border mt-24 text-center">
+      <table className="text-tod border-separate border-spacing-x-20 border-spacing-y-8 border mt-24 text-center">
         <thead>
           <tr>
             <th className="bg-blo px-14 hover:bg-blt">Meal</th>
