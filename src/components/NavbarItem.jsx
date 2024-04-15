@@ -6,15 +6,15 @@ import PropTypes from "prop-types";
  * @param {object} props - The props of the navigation bar item.
  * @param {string} props.text - The text content of the navigation bar item.
  * @param {string} props.href - The URL of the navigation bar item.
- * @param {boolean} [props.current] - Whether the navigation bar item is the current page.
- * @return {JSX.Element} The rendered navigation bar item.
+ * @param {boolean} [props.current]
+ * @return {JSX.Element}
  */
 export function NavbarItem({ text, href, current }) {
   return (
     <li>
       <a
         href={href}
-        className={`block py-2 px-3 text-tod rounded hover:bg-blo md:hover:bg-transparent md:border-0 md:hover:text-blo md:p-0 text-blo ${
+        className={`block py-2 px-3 text-tod rounded hover:bg-blo md:hover:bg-transparent md:border-0 md:hover:text-blo md:p-0  ${
           current ? "text-tod bg-blo md:bg-transparent md:text-blo" : ""
         }`}
         aria-current={current ? "page" : undefined}
@@ -26,6 +26,7 @@ export function NavbarItem({ text, href, current }) {
 }
 
 NavbarItem.propTypes = {
+  // eslint-disable-next-line prettier/prettier
   text: PropTypes.string.isRequired,
   href: PropTypes.string.isRequired,
   current: PropTypes.bool,
