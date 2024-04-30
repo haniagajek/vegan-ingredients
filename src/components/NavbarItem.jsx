@@ -14,7 +14,7 @@ export function NavbarItem({ text, href, current }) {
     <li>
       <a
         href={href}
-        className={`block py-2 px-3 text-tod rounded hover:bg-blo md:hover:bg-transparent md:border-0 md:hover:text-blo md:p-0  ${
+        className={`block py-2 px-3 text-tod rounded hover:bg-ttd md:hover:bg-transparent md:border-0 md:hover:text-blo md:p-0  ${
           current ? "text-tod bg-blo md:bg-transparent md:text-blo" : ""
         }`}
         aria-current={current ? "page" : undefined}

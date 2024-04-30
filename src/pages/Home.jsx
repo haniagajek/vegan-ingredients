@@ -13,7 +13,16 @@ export function Home() {
       <h1 className="text-tod text-4xl font-bold text-left my-5">
         Welcome to My Full-Width Homepage!
       </h1>
-      <p className="text-ttd text-lg text-left mb-6">Penis</p>
+      <p className="text-ttd text-lg text-left mb-6">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Lacus luctus
+        accumsan tortor posuere ac ut. Pellentesque elit ullamcorper dignissim
+        cras tincidunt lobortis. Ac turpis egestas integer eget. Gravida arcu ac
+        tortor dignissim convallis aenean et tortor. In hendrerit gravida rutrum
+        quisque non tellus orci ac auctor. Purus faucibus ornare suspendisse sed
+        nisi lacus. Ac felis donec et odio pellentesque diam. Faucibus a
+        pellentesque sit amet porttitor eget dolor
+      </p>
 
       <section className="mb-6">
         <h2 className="text-tod text-3xl font-semibold text-left mb-4">
