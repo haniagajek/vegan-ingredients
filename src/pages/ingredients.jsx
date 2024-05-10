@@ -26,7 +26,7 @@ export function Ingredients() {
               Level
             </th>
             <th scope="col" class="px-6 py-3">
-              More
+              Info
             </th>
           </tr>
         </thead>
@@ -41,20 +41,30 @@ export function Ingredients() {
             <td class="px-6 py-4">1000 kcal</td>
             <td class="px-6 py-4">Medium</td>
 
-            <button onClick={() => SetShowInfo(true)}>
-              {info ? <td> info is shown</td> : <td> info is not shown</td>}...
+            <button class="px-9 m-1 py-4" onClick={() => SetShowInfo(true)}>
+              ...
             </button>
           </tr>
-          <tr class="odd:bg-white  even:bg-gray-200 border-b ">
-            <th
-              scope="row"
-              class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap e"
-            >
-              info
-            </th>
-            <td class="px-6 py-4">info</td>
-            <td class="px-6 py-4">info</td>
-          </tr>
+          {info ? (
+            <tr class="odd:bg-white  even:bg-gray-200 border-b ">
+              <th
+                scope="row"
+                class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap e"
+              >
+                info
+              </th>
+              <td class="px-6 py-4">info</td>
+              <td class="px-6 py-4">info</td>
+              <button
+                class="px-9 m-1 py-4 bg-gray-300"
+                onClick={() => SetShowInfo(false)}
+              >
+                ^
+              </button>
+            </tr>
+          ) : (
+            <td></td>
+          )}
           <tr class="odd:bg-white  even:bg-gray-200 ">
             <th
               scope="row"
@@ -64,17 +74,30 @@ export function Ingredients() {
             </th>
             <td class="px-6 py-4">1000 kcal</td>
             <td class="px-6 py-4">Easy</td>
+            <button class="px-9 m-1 py-4" onClick={() => SetShowInfo(true)}>
+              ...
+            </button>
           </tr>
-          <tr class="odd:bg-white  even:bg-gray-200 ">
-            <th
-              scope="row"
-              class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap "
-            >
-              info
-            </th>
-            <td class="px-6 py-4">info</td>
-            <td class="px-6 py-4">info</td>
-          </tr>
+          {info ? (
+            <tr class="odd:bg-white  even:bg-gray-200 border-b ">
+              <th
+                scope="row"
+                class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap e"
+              >
+                info
+              </th>
+              <td class="px-6 py-4">info</td>
+              <td class="px-6 py-4">info</td>
+              <button
+                class="px-9 m-1 py-4 bg-gray-300"
+                onClick={() => SetShowInfo(false)}
+              >
+                ^
+              </button>
+            </tr>
+          ) : (
+            <td></td>
+          )}
         </tbody>
       </table>
     </div>

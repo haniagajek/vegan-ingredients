@@ -1,5 +1,5 @@
 import "./styles/App.css";
-import React from "react";
+import React, { useState } from "react";
 import { StandardLayout } from "./layout/StandardLayout";
 import { Home } from "./pages/Home";
 import { Ingredients } from "./pages/Ingredients";
@@ -8,6 +8,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Navbar } from "./components/Navbar";
 import PropTypes from "prop-types";
 import { ThemeContext } from "./contexts/ThemeContext";
+import { InfoContext } from "./contexts/InfoContext";
 
 /**
  * @param {Object} props
@@ -50,9 +51,13 @@ function App() {
     setTheme(newTheme);
   };
 
+  const [info, SetShowInfo] = useState(false);
+
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>
-      <RouterProvider router={router} />
+      <InfoContext.Provider value={{ info, SetShowInfo }}>
+        <RouterProvider router={router} />
+      </InfoContext.Provider>
     </ThemeContext.Provider>
   );
 }
