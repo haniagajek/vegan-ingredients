@@ -9,6 +9,7 @@ import { Navbar } from "./components/Navbar";
 import PropTypes from "prop-types";
 import { ThemeContext } from "./contexts/ThemeContext";
 import { InfoContext } from "./contexts/InfoContext";
+import { IdContext } from "./contexts/IdContext";
 
 /**
  * @param {Object} props
@@ -50,15 +51,18 @@ function App() {
 
     setTheme(newTheme);
   };
+  const [id, SetId] = useState({});
 
   const [info, SetShowInfo] = useState(false);
 
   return (
-    <ThemeContext.Provider value={{ theme, toggleTheme }}>
-      <InfoContext.Provider value={{ info, SetShowInfo }}>
-        <RouterProvider router={router} />
-      </InfoContext.Provider>
-    </ThemeContext.Provider>
+    <IdContext.Provider value={{ id, SetId }}>
+      <ThemeContext.Provider value={{ theme, toggleTheme }}>
+        <InfoContext.Provider value={{ info, SetShowInfo }}>
+          <RouterProvider router={router} />
+        </InfoContext.Provider>
+      </ThemeContext.Provider>
+    </IdContext.Provider>
   );
 }
 
