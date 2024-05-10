@@ -1,6 +1,7 @@
 /* eslint-disable prettier/prettier */
 import React from "react";
-
+import { useContext } from "react";
+import { InfoContext } from "../contexts/InfoContext";
 // trzeba zrobic zmienna ktora przyjmuje numer przedzialu w tabeli tak zeby byl np 1 i 1 i na pierwszym bedzie func(click) a na drugim bedzie wysuwanie
 /**
  * Renders the Home component.
@@ -9,9 +10,10 @@ import React from "react";
  * @return {JSX.Element} The rendered Home component.
  */
 export function Ingredients() {
+  const { info, SetShowInfo } = useContext(InfoContext);
   return (
-    <div class="relative overflow-x-auto shadow-md sm:rounded-lg ">
-      <table class="w-full text-sm text-left rtl:text-right text-gray-500 ">
+    <div class="relative overflow-x-auto shadow-md sm:rounded-lg m-20 ">
+      <table class="w-full text-sm text-left rtl:text-right text-gray-500  ">
         <thead class="text-xs text-gray-700 uppercase bg-gray-200 ">
           <tr>
             <th scope="col" class="px-6 py-3">
@@ -22,6 +24,9 @@ export function Ingredients() {
             </th>
             <th scope="col" class="px-6 py-3">
               Level
+            </th>
+            <th scope="col" class="px-6 py-3">
+              More
             </th>
           </tr>
         </thead>
@@ -35,6 +40,10 @@ export function Ingredients() {
             </th>
             <td class="px-6 py-4">1000 kcal</td>
             <td class="px-6 py-4">Medium</td>
+
+            <button onClick={() => SetShowInfo(true)}>
+              {info ? <td> info is shown</td> : <td> info is not shown</td>}...
+            </button>
           </tr>
           <tr class="odd:bg-white  even:bg-gray-200 border-b ">
             <th
