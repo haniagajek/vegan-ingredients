@@ -1,7 +1,6 @@
 /* eslint-disable prettier/prettier */
 import React from "react";
 import { NavbarItem } from "./NavbarItem";
-import { useState } from "react";
 import { ThemeContext } from "../contexts/ThemeContext";
 import { useContext } from "react";
 
@@ -10,7 +9,7 @@ import { useContext } from "react";
  * @return {JSX.Element} The rendered navigation bar.
  */
 export function Navbar() {
-  const { theme, toggleTheme } = useContext(ThemeContext);
+  const { theme } = useContext(ThemeContext);
 
   return (
     <nav className={`${theme}`}>
@@ -18,24 +17,6 @@ export function Navbar() {
         <span className="text-tod self-center text-2xl font-semibold whitespace-nowrap ">
           Vegan Ingredients
         </span>
-
-        {/* <button
-          className=" w-14 h-7 p-0 bg-slate-500 rounded-lg border-none hover:bg-slate-400 "
-          onClick={toggleTheme}
-        >
-          {" "}
-          {theme ? "LHT" : "DRK"}{" "}
-        </button> */}
-
-        <label class="inline-flex items-center mb-5 cursor-pointer ">
-          <input type="checkbox" value="" class="sr-only peer"></input>
-          <div
-            class="relative w-11 h-6 bg-zinc-500 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-zinc-500 dark:peer-focus:ring-zinc-500 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-zinc-200 peer-checked:bg-zinc-200"
-            onClick={toggleTheme}
-          >
-            {" "}
-          </div>
-        </label>
 
         <button
           data-collapse-toggle="navbar-default"

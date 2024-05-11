@@ -10,6 +10,7 @@ import PropTypes from "prop-types";
 import { ThemeContext } from "./contexts/ThemeContext";
 import { InfoContext } from "./contexts/InfoContext";
 import { IdContext } from "./contexts/IdContext";
+import { ThemeSwitch } from "./components/ThemeSwitch";
 
 /**
  * @param {Object} props
@@ -17,7 +18,11 @@ import { IdContext } from "./contexts/IdContext";
  * @return {JSX.Element}
  */
 function StandardPage({ page }) {
-  return <StandardLayout navbar={<Navbar />}>{page}</StandardLayout>;
+  return (
+    <StandardLayout navbar={<Navbar />} themeswitch={<ThemeSwitch />}>
+      {page}
+    </StandardLayout>
+  );
 }
 
 StandardPage.propTypes = {
