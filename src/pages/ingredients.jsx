@@ -12,7 +12,23 @@ import { IdContext } from "../contexts/IdContext";
  */
 export function Ingredients() {
   const { info, SetShowInfo } = useContext(InfoContext);
-  const { id, SetId } = useContext(IdContext);
+  const { ids, SetIds } = useContext(IdContext);
+
+  const closeRow = (rowId) => {
+    SetIds(ids.filter((id) => id !== rowId));
+  };
+
+  const openRow = (rowId) => {
+    SetIds([...ids, rowId]);
+  };
+
+  const toggleRow = (rowId) => {
+    if (ids.includes(rowId)) {
+      closeRow(rowId);
+    } else {
+      openRow(rowId);
+    }
+  };
 
   return (
     <div class="relative overflow-x-auto shadow-md sm:rounded-lg m-20 ">
@@ -52,17 +68,16 @@ export function Ingredients() {
 
             <button
               class="px-9 m-1 py-4"
-              value={1}
               onClick={() => {
-                SetId(1);
+                toggleRow(1);
                 SetShowInfo(true);
-                console.log(id);
+                console.log(ids);
               }}
             >
               ...
             </button>
           </tr>
-          {info && id == 1 ? (
+          {info && ids.includes(1) ? (
             <tr class="odd:bg-white  even:bg-gray-200 border-b ">
               <th
                 scope="row"
@@ -74,7 +89,10 @@ export function Ingredients() {
               <td class="px-6 py-4">info</td>
               <button
                 class="px-9 m-1 py-4 bg-gray-300"
-                onClick={() => SetShowInfo(false)}
+                onClick={() => {
+                  SetShowInfo(false);
+                  toggleRow(1);
+                }}
               >
                 ^
               </button>
@@ -93,17 +111,16 @@ export function Ingredients() {
             <td class="px-6 py-4">Easy</td>
             <button
               class="px-9 m-1 py-4"
-              value={2}
               onClick={() => {
-                SetId(2);
+                toggleRow(2);
                 SetShowInfo(true);
-                console.log(id);
+                console.log(ids);
               }}
             >
               ...
             </button>
           </tr>
-          {info && id == 2 ? (
+          {info && ids.includes(2) ? (
             <tr class="odd:bg-white  even:bg-gray-200 border-b ">
               <th
                 scope="row"
@@ -115,7 +132,10 @@ export function Ingredients() {
               <td class="px-6 py-4">info</td>
               <button
                 class="px-9 m-1 py-4 bg-gray-300"
-                onClick={() => SetShowInfo(false)}
+                onClick={() => {
+                  SetShowInfo(false);
+                  toggleRow(2);
+                }}
               >
                 ^
               </button>
