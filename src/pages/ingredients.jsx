@@ -16,10 +16,12 @@ export function Ingredients() {
 
   const closeRow = (rowId) => {
     SetIds(ids.filter((id) => id !== rowId));
+    console.log(ids);
   };
 
   const openRow = (rowId) => {
     SetIds([...ids, rowId]);
+    console.log(ids);
   };
 
   const toggleRow = (rowId) => {
@@ -29,6 +31,15 @@ export function Ingredients() {
       openRow(rowId);
     }
   };
+
+  // setId works with delay // also
+  //  funtion name(input.value){
+  //   if (Input.length > 0){
+  //     search
+  //   } else {
+  //     input.value = "try searching for something"
+  //   }
+  //  }
 
   return (
     <div class="relative overflow-x-auto shadow-md sm:rounded-lg m-20 ">
@@ -71,7 +82,6 @@ export function Ingredients() {
               onClick={() => {
                 toggleRow(1);
                 SetShowInfo(true);
-                console.log(ids);
               }}
             >
               ...
@@ -91,7 +101,6 @@ export function Ingredients() {
                 class="px-9 m-1 py-4 bg-gray-300"
                 onClick={() => {
                   SetShowInfo(false);
-                  toggleRow(1);
                 }}
               >
                 ^
