@@ -12,25 +12,29 @@ import { IdContext } from "../contexts/IdContext";
  */
 export function Ingredients() {
   const { info, SetShowInfo } = useContext(InfoContext);
-  const { ids, SetIds } = useContext(IdContext);
+  const { ids, setIds } = useContext(IdContext);
 
   const closeRow = (rowId) => {
-    SetIds(ids.filter((id) => id !== rowId));
-    console.log(ids);
+    setIds(ids.filter((id) => id !== rowId));
   };
 
   const openRow = (rowId) => {
-    SetIds([...ids, rowId]);
-    console.log(ids);
+    setIds([...ids, rowId]);
   };
 
   const toggleRow = (rowId) => {
     if (ids.includes(rowId)) {
       closeRow(rowId);
+      console.log(ids);
     } else {
       openRow(rowId);
+      console.log(ids);
     }
   };
+
+  function FuncVal(val) {
+    console.log(val);
+  }
 
   // setId works with delay // also
   //  funtion name(input.value){
@@ -44,10 +48,12 @@ export function Ingredients() {
   return (
     <div class="relative overflow-x-auto shadow-md sm:rounded-lg m-20 ">
       <input
+        value={"ses"}
         type="text"
         id="table-search"
         class="block p-2 ps-6 text-sm ml-auto mr-auto my-2 text-gray-900 border border-gray-300 rounded-lg w-80 bg-gray-50 focus:ring-blue-500 focus:border-blue-500 "
         placeholder="Search for meals"
+        onChange={FuncVal}
       ></input>
       <table class="w-full text-sm text-left rtl:text-right text-gray-500  ">
         <thead class="text-xs text-gray-700 uppercase bg-gray-200 ">
@@ -123,7 +129,6 @@ export function Ingredients() {
               onClick={() => {
                 toggleRow(2);
                 SetShowInfo(true);
-                console.log(ids);
               }}
             >
               ...

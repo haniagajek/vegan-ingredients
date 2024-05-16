@@ -56,12 +56,12 @@ function App() {
 
     setTheme(newTheme);
   };
-  const [ids, SetIds] = useState([]);
+  const [ids, setIds] = useState([]);
 
   const [info, SetShowInfo] = useState(false);
 
   return (
-    <IdContext.Provider value={{ ids, SetIds }}>
+    <IdContext.Provider value={{ ids, setIds }}>
       <ThemeContext.Provider value={{ theme, toggleTheme }}>
         <InfoContext.Provider value={{ info, SetShowInfo }}>
           <RouterProvider router={router} />
