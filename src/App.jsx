@@ -11,6 +11,7 @@ import { ThemeContext } from "./contexts/ThemeContext";
 import { InfoContext } from "./contexts/InfoContext";
 import { IdContext } from "./contexts/IdContext";
 import { ThemeSwitch } from "./components/ThemeSwitch";
+import { InputContext } from "./contexts/InputContext";
 
 /**
  * @param {Object} props
@@ -60,14 +61,18 @@ function App() {
 
   const [info, SetShowInfo] = useState(false);
 
+  const [input, setInput] = useState({});
+
   return (
-    <IdContext.Provider value={{ ids, setIds }}>
-      <ThemeContext.Provider value={{ theme, toggleTheme }}>
-        <InfoContext.Provider value={{ info, SetShowInfo }}>
-          <RouterProvider router={router} />
-        </InfoContext.Provider>
-      </ThemeContext.Provider>
-    </IdContext.Provider>
+    <InputContext.Provider value={{ input, setInput }}>
+      <IdContext.Provider value={{ ids, setIds }}>
+        <ThemeContext.Provider value={{ theme, toggleTheme }}>
+          <InfoContext.Provider value={{ info, SetShowInfo }}>
+            <RouterProvider router={router} />
+          </InfoContext.Provider>
+        </ThemeContext.Provider>
+      </IdContext.Provider>
+    </InputContext.Provider>
   );
 }
 

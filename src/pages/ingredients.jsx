@@ -3,6 +3,7 @@ import React from "react";
 import { useContext } from "react";
 import { InfoContext } from "../contexts/InfoContext";
 import { IdContext } from "../contexts/IdContext";
+import { InputContext } from "../contexts/InputContext";
 // trzeba zrobic zmienna ktora przyjmuje numer przedzialu w tabeli tak zeby byl np 1 i 1 i na pierwszym bedzie func(click) a na drugim bedzie wysuwanie
 /**
  * Renders the Home component.
@@ -13,6 +14,7 @@ import { IdContext } from "../contexts/IdContext";
 export function Ingredients() {
   const { info, SetShowInfo } = useContext(InfoContext);
   const { ids, setIds } = useContext(IdContext);
+  const { input, setInput } = useContext(InputContext);
 
   const closeRow = (rowId) => {
     setIds(ids.filter((id) => id !== rowId));
@@ -34,8 +36,11 @@ export function Ingredients() {
 
   const handleSubmit = (e) => {
     const val = e.target.value;
-    console.log(val);
+    setInput(val);
+    console.log(input);
   };
+
+  // trzeba zrobic tak zeby wyszukiwalo
 
   return (
     <div class="relative overflow-x-auto shadow-md sm:rounded-lg m-20 ">
