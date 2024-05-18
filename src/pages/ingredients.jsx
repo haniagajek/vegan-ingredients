@@ -39,6 +39,11 @@ export function Ingredients() {
     setInput(val);
     console.log(input);
   };
+  function nameLoop(name) {
+    for (let i = 0; i < 5; i++) {
+      console.log(name[i]);
+    }
+  }
 
   // trzeba zrobic tak zeby wyszukiwalo
 
@@ -154,7 +159,11 @@ export function Ingredients() {
           ) : (
             <td></td>
           )}
-          {input == "skibidi" ? <div>skibidi</div> : <div>no skibidi</div>}
+          {input == nameLoop("skibidi") ? (
+            <div>skibidi</div>
+          ) : (
+            <div>no skibidi</div>
+          )}
         </tbody>
       </table>
     </div>
