@@ -154,6 +154,7 @@ export function Ingredients() {
           ) : (
             <td></td>
           )}
+          {input == "skibidi" ? <div>skibidi</div> : <div>no skibidi</div>}
         </tbody>
       </table>
     </div>
