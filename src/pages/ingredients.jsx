@@ -39,11 +39,17 @@ export function Ingredients() {
     setInput(val);
     console.log(input);
   };
+
   function nameLoop(name) {
-    for (let i = 0; i < 5; i++) {
-      console.log(name[i]);
-    }
+    const letters = name.split("");
+    console.log(letters);
+
+    console.log(letters.includes(input));
   }
+
+  // function filterAll(x, y) {
+  //   console.log(x.split("").filter(y.split(""));
+  // }
 
   // trzeba zrobic tak zeby wyszukiwalo
 
@@ -159,11 +165,7 @@ export function Ingredients() {
           ) : (
             <td></td>
           )}
-          {input == nameLoop("skibidi") ? (
-            <div>skibidi</div>
-          ) : (
-            <div>no skibidi</div>
-          )}
+          {nameLoop("ski") ? <div>skibidi</div> : <div>no skibidi</div>}
         </tbody>
       </table>
     </div>
