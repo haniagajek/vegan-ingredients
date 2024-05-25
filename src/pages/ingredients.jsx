@@ -37,14 +37,10 @@ export function Ingredients() {
   const handleSubmit = (e) => {
     const val = e.target.value;
     setInput(val);
-    console.log(input);
   };
 
   function nameLoop(name) {
-    const letters = name.split("");
-    console.log(letters);
-
-    console.log(letters.includes(input));
+    console.log(name.includes(input));
   }
 
   // function filterAll(x, y) {
@@ -81,26 +77,31 @@ export function Ingredients() {
           </tr>
         </thead>
         <tbody>
-          <tr class="odd:bg-white  even:bg-gray-200 ">
-            <th
-              scope="row"
-              class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap "
-            >
-              Pumpkin risotto
-            </th>
-            <td class="px-6 py-4">1000 kcal</td>
-            <td class="px-6 py-4">Medium</td>
+          {"pumpkin risotto".includes(input) || input.length == 0 ? (
+            <tr class="odd:bg-white  even:bg-gray-200 ">
+              <th
+                scope="row"
+                class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap "
+              >
+                Pumpkin risotto
+              </th>
+              <td class="px-6 py-4">1000 kcal</td>
+              <td class="px-6 py-4">Medium</td>
 
-            <button
-              class="px-9 m-1 py-4"
-              onClick={() => {
-                toggleRow(1);
-                SetShowInfo(true);
-              }}
-            >
-              ...
-            </button>
-          </tr>
+              <button
+                class="px-9 m-1 py-4"
+                onClick={() => {
+                  toggleRow(1);
+                  SetShowInfo(true);
+                }}
+              >
+                ...
+              </button>
+            </tr>
+          ) : (
+            <td></td>
+          )}
+
           {info && ids.includes(1) ? (
             <tr class="odd:bg-white  even:bg-gray-200 border-b ">
               <th
@@ -123,25 +124,29 @@ export function Ingredients() {
           ) : (
             <td></td>
           )}
-          <tr class="odd:bg-white  even:bg-gray-200 ">
-            <th
-              scope="row"
-              class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap "
-            >
-              Butter masala
-            </th>
-            <td class="px-6 py-4">1000 kcal</td>
-            <td class="px-6 py-4">Easy</td>
-            <button
-              class="px-9 m-1 py-4"
-              onClick={() => {
-                toggleRow(2);
-                SetShowInfo(true);
-              }}
-            >
-              ...
-            </button>
-          </tr>
+          {"butter masala".includes(input) || input.length == 0 ? (
+            <tr class="odd:bg-white  even:bg-gray-200 ">
+              <th
+                scope="row"
+                class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap "
+              >
+                Butter masala
+              </th>
+              <td class="px-6 py-4">1000 kcal</td>
+              <td class="px-6 py-4">Easy</td>
+              <button
+                class="px-9 m-1 py-4"
+                onClick={() => {
+                  toggleRow(2);
+                  SetShowInfo(true);
+                }}
+              >
+                ...
+              </button>
+            </tr>
+          ) : (
+            <td></td>
+          )}
           {info && ids.includes(2) ? (
             <tr class="odd:bg-white  even:bg-gray-200 border-b ">
               <th
@@ -165,9 +170,24 @@ export function Ingredients() {
           ) : (
             <td></td>
           )}
-          {nameLoop("ski") ? <div>skibidi</div> : <div>no skibidi</div>}
         </tbody>
       </table>
     </div>
   );
 }
+// {"Butter masala".includes(input) || input.length == 0 ? (
+//   <tr class="odd:bg-white  even:bg-gray-200 ">
+//     <th
+//       scope="row"
+//       class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap "
+//     >
+//       Butter masala
+//     </th>
+//     <td class="px-6 py-4">1000 kcal</td>
+//     <td class="px-6 py-4">Easy</td>
+//     <button
+//       class="px-9 m-1 py-4"
+//       onClick={() => {
+//         toggleRow(2);
+//         SetShowInfo(true);
+//       }}
